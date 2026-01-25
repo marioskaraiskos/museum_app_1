@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Manage Services</h2>
+
+<p><a href="{{ url_for('admin_add_service') }}">+ Add New Service</a></p>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Created By</th>
+        <th>Created</th>
+        <th>Actions</th>
+    </tr>
+    {% for service in services %}
+    <tr>
+        <td>{{ service.id }}</td>
+        <td>{{ service.title }}</td>
+        <td>{{ service.created_by }}</td>
+        <td>{{ service.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+        <td>
+            <a href="{{ url_for('admin_edit_service', service_id=service.id) }}">Edit</a> |
+            <form method="post" action="{{ url_for('admin_delete_service', service_id=service.id) }}" style="display:inline;">
+                <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="{{ url_for('admin_dashboard') }}">Back to Dashboard</a>
+
+{% endblock %}

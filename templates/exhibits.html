@@ -2,16 +2,15 @@
 {% block content %}
 
 <h2>Exhibits</h2>
-
 <ul class="card-list">
-    <li class="card">
-        <h3>Ancient Greece</h3>
-        <p>Artifacts from classical antiquity.</p>
-    </li>
-    <li class="card">
-        <h3>Roman Empire</h3>
-        <p>Sculptures, coins, and daily life objects.</p>
-    </li>
+    {% for ex in exhibits %}
+        <li class="card">
+                <h3>{{ ex.title }}</h3>
+                <p>{{ ex.description }}</p>
+        </li>
+    {% else %}
+        <p>No exhibits available.</p>
+    {% endfor %}
 </ul>
 
 {% endblock %}

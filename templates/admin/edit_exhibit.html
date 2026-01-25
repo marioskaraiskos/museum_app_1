@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit Exhibit</h2>
+
+<form method="post" action="{{ url_for('admin_edit_exhibit', exhibit_id=exhibit.id) }}">
+    <label>Title</label>
+    <input type="text" name="title" value="{{ exhibit.title }}" required>
+
+    <label>Description</label>
+    <textarea name="description" rows="10" required>{{ exhibit.description }}</textarea>
+
+    <button type="submit">Update Exhibit</button>
+</form>
+
+<a href="{{ url_for('admin_exhibits') }}">Cancel</a>
+
+{% endblock %}

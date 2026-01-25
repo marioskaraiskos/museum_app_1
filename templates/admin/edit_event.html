@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit Event</h2>
+
+<form method="post" action="{{ url_for('admin_edit_event', event_id=event.id) }}">
+    <label>Title</label>
+    <input type="text" name="title" value="{{ event.title }}" required>
+
+    <label>Date (YYYY-MM-DD)</label>
+    <input type="text" name="date" value="{{ event.date }}" required>
+
+    <label>Start Time (HH:MM)</label>
+    <input type="text" name="start" value="{{ event.start }}" required>
+
+    <label>End Time (HH:MM)</label>
+    <input type="text" name="end" value="{{ event.end }}" required>
+
+    <label>Description</label>
+    <textarea name="description" rows="10" required>{{ event.description }}</textarea>
+
+    <button type="submit">Update Event</button>
+</form>
+
+<a href="{{ url_for('admin_events') }}">Cancel</a>
+
+{% endblock %}

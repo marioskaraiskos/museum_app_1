@@ -11,7 +11,7 @@
         <p><strong>Date:</strong> {{ event.date }}</p>
         <p><strong>Time:</strong> {{ event.start }} – {{ event.end }}</p>
         <p>{{ event.description }}</p>
-        {% if session.get('user') %}
+        {% if session.get('user_id') %}
             <a class="button" href="{{ url_for('book_event', event_id=event.id) }}">Book</a>
         {% else %}
             <a class="button" href="{{ url_for('login_view', next=url_for('book_event', event_id=event.id)) }}">Login to Book</a>

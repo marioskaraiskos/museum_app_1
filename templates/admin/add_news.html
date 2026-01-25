@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add News</h2>
+
+<form method="post" action="{{ url_for('admin_add_news') }}">
+    <label>Title</label>
+    <input type="text" name="title" required>
+
+    <label>Content</label>
+    <textarea name="content" rows="10" required></textarea>
+
+    <button type="submit">Add News</button>
+</form>
+
+<a href="{{ url_for('admin_news') }}">Cancel</a>
+
+{% endblock %}

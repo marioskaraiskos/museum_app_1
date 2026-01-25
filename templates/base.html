@@ -17,9 +17,14 @@
             <li><a href="{{ url_for('events') }}">Events</a></li>
             <li><a href="{{ url_for('news') }}">News</a></li>
             <li><a href="{{ url_for('services') }}">Services</a></li>
-            <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact</a></li>
-            <li><a href="{{ url_for('login_view') }}">Login</a></li>
+            {% if session.get('username') %}
+                {% if session.get('is_admin') %}
+                    <li><a href="{{ url_for('admin_dashboard') }}">Admin Panel</a></li>
+                {% endif %}
+                <li><a href="{{ url_for('logout') }}">Logout ({{ session.get('username') }})</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login_view') }}">Login</a></li>
+            {% endif %}
         </ul>
     </nav>
 </header>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Bookings</h2>
+<ul>
+  {% for b in bookings %}
+    <li>
+      <strong>{{ b.event.title if b.event else 'Unknown event' }}</strong>
+      by {{ b.user.username if b.user else 'Unknown user' }} at {{ b.booked_at }}
+      <form action="{{ url_for('admin_delete_booking', booking_id=b.id) }}" method="post" style="display:inline">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  {% else %}
+    <li>No bookings.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

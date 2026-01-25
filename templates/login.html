@@ -4,8 +4,8 @@
 <h2>Login</h2>
 
 <form method="post" action="{{ url_for('login_view', next=request.args.get('next')) }}">
-    <label>Email</label>
-    <input type="email" name="email" required>
+    <label>Username</label>
+    <input type="text" name="username" required>
 
     <label>Password</label>
     <input type="password" name="password" required>
