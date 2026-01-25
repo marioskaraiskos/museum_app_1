@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+    <h2>Welcome to the Museum of History</h2>
+    <p>Explore culture, art, and heritage through our exhibitions.</p>
+</section>
+
+<section class="grid">
+    <article>
+        <h3><a href="{{ url_for('exhibits') }}">Featured Exhibit</a></h3>
+        <p>Ancient Civilizations Collection</p>
+    </article>
+    <article>
+        <h3><a href="{{ url_for('events') }}">Upcoming Event</a></h3>
+        <p>Guided Tour – April 20</p>
+    </article>
+    <article>
+        <h3><a href="{{ url_for('news') }}">Latest News</a></h3>
+        <p>New gallery opening soon</p>
+    </article>
+</section>
+
+{% endblock %}

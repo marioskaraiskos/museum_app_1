@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Upcoming Events</h2>
+<p>Discover events, guided tours, and educational activities taking place at the museum.</p>
+
+<section class="card-list">
+  {% for event in upcoming_events %}
+    <article class="card">
+        <h3>{{ event.title }}</h3>
+        <p><strong>Date:</strong> {{ event.date }}</p>
+        <p><strong>Time:</strong> {{ event.start }} – {{ event.end }}</p>
+        <p>{{ event.description }}</p>
+        {% if session.get('user') %}
+            <a class="button" href="{{ url_for('book_event', event_id=event.id) }}">Book</a>
+        {% else %}
+            <a class="button" href="{{ url_for('login_view', next=url_for('book_event', event_id=event.id)) }}">Login to Book</a>
+        {% endif %}
+    </article>
+  {% else %}
+    <p>No upcoming events at the moment.</p>
+  {% endfor %}
+</section>
+
+<hr>
+
+<h2>Past Events</h2>
+
+<section class="card-list">
+  {% for event in past_events %}
+    <article class="card">
+        <h3>{{ event.title }}</h3>
+        <p><strong>Date:</strong> {{ event.date }}</p>
+        <p>{{ event.description }}</p>
+    </article>
+  {% else %}
+    <p>No past events found.</p>
+  {% endfor %}
+</section>
+
+{% endblock %}
