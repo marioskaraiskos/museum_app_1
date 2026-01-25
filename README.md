@@ -25,7 +25,7 @@ The app allows users to view exhibits, news, events, services, submit feedback, 
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/museum_app_1
+git clone https://github.com/marioskaraiskos/museum_app_1
 cd museum_app_1
 code .
 
