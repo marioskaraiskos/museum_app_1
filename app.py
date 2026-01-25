@@ -219,6 +219,24 @@ def services():
     return render_template("services.html", services=services)
 
 
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        name = request.form.get("name")
+        email = request.form.get("email")
+        phone = request.form.get("phone", "")
+        subject = request.form.get("subject")
+        message = request.form.get("message")
+        
+        # Log the contact message (you can enhance this to send emails, save to database, etc.)
+        log_action(f"Contact form submission from {email}: {subject}")
+        
+        flash("Thank you for your message! We'll get back to you soon.", "success")
+        return redirect(url_for("contact"))
+    
+    return render_template("contact.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":

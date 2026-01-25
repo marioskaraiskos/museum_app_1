@@ -17,6 +17,7 @@
             <li><a href="{{ url_for('events') }}">Events</a></li>
             <li><a href="{{ url_for('news') }}">News</a></li>
             <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
             {% if session.get('username') %}
                 {% if session.get('is_admin') %}
                     <li><a href="{{ url_for('admin_dashboard') }}">Admin Panel</a></li>
