@@ -20,32 +20,16 @@ The app allows users to view exhibits, news, events, services, submit feedback, 
 - Accessible and semantic HTML
 - Clean, modern UI design
 
----
-
-## Screenshots
-
-*Optional: Add screenshots of your app here.*
-
----
 
 ## Installation
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/museum-app.git
+git clone https://github.com/yourusername/museum-app
 cd museum-app
+code .
 
-2. **Create and enable Venv file**
-```bash
-python -m venv venv
-venv\Scripts\activate
-
-3. **Install python and flask packages inside the virtual environment**
-```bash
-pip install python
-pip install flask
-
-4. **Run the App**
+After that you want to type the following command at /museum_app_1: "python setup-admin.py" so that u can create an admin user, where you can create exhibits, events, news and services. u cna log into the admin account by pressing login, the credentials are: Username: admin, password:admin123. after that you can log into your admin account, and create, edit and delete information and users from the Admin Panel. Create and Use a regulal user to see the work u just made from the admin user!
 ```bash
 python app.py
 
