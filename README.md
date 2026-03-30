@@ -28,9 +28,7 @@ The app allows users to view exhibits, news, events, services, submit feedback, 
 git clone https://github.com/marioskaraiskos/museum_app_1
 cd museum_app_1
 code .
-
-After that you want to type the following command at /museum_app_1: "python setup_admin.py" so that u can create an admin user, where you can create exhibits, events, news and services. u cna log into the admin account by pressing login, the credentials are: Username: admin, password:admin123. after that you can log into your admin account, and create, edit and delete information and users from the Admin Panel. Create and Use a regulal user to see the work u just made from the admin user!
-```bash
+pip install -r .\requirements.txt
 python app.py
 
 
