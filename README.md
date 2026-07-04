@@ -212,6 +212,9 @@ If this project helped you, please consider giving it a ⭐ Star!
 
 ---
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-green)](https://museum-app-xyz.onrender.com)
+
+
 <div align="center">
 
 **Made with ❤️ and Flask by Mario Skaraiskos**
