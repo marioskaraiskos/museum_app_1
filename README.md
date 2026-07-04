@@ -189,7 +189,7 @@ This project is licensed under the **MIT License** - see the LICENSE file for de
 
 ## 👨‍💻 Author
 
-**Mario Skaraiskos**
+**Marios karaiskos**
 
 - GitHub: [@marioskaraiskos](https://github.com/marioskaraiskos)
 - Repository: [museum_app_1](https://github.com/marioskaraiskos/museum_app_1)
