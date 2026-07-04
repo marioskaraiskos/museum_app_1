@@ -5,6 +5,8 @@ from datetime import datetime
 import os
 from config import MUSEUM_EMAIL, MUSEUM_EMAIL_PASSWORD
 
+
+
 app = Flask(__name__)
 app.secret_key = "replace-with-a-secure-random-key"
 
@@ -794,4 +796,6 @@ def admin_delete_booking(booking_id):
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
